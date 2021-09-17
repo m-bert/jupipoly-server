@@ -1,17 +1,18 @@
-import express, { Request, Response, Application } from "express";
+import express = require("express");
+import cors = require("cors");
+import { Request, Response, Application } from "express";
 import { Socket, Server } from "socket.io";
-import cors from "cors";
 import "colors";
 
 import Player from "./Player";
 import Settings from "./Settings";
 
-//Setting app
+//////////Setting app////////////
 const app: Application = express();
 app.use(cors());
 
 app.get("/", (req: Request, res: Response): void => {
-  res.send("This server works only as an API");
+  res.send("<i>Note: This server works only as an API</i>");
 });
 
 const server: any = app.listen(Settings.PORT, (): void => {
@@ -19,9 +20,9 @@ const server: any = app.listen(Settings.PORT, (): void => {
 });
 ////////////////////////////////
 
+//Main logic
 const Players: Array<Player> = new Array();
 
-//Main logic
 const io: Server = new Server(server, {
   cors: {
     origin: "http://localhost:3000",
