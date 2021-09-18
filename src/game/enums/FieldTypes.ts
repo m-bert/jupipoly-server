@@ -1,4 +1,4 @@
-export enum FieldTypes {
+export enum FieldType {
   PROPERTY,
   TAX,
   RAILWAY,

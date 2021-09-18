@@ -1,8 +1,13 @@
 import Settings from "../Settings";
-import { FieldTypes } from "./enums/FieldTypes";
+import { FieldType } from "./enums/FieldTypes";
+import { GameStatus } from "./enums/GameStatus";
 
 export default class Game {
-  constructor() {}
+  private gameStatus: GameStatus;
+
+  constructor() {
+    this.gameStatus = GameStatus.LOBBY;
+  }
 
   public init(): void {}
 
@@ -11,5 +16,10 @@ export default class Game {
     let ndDie: number = Settings.getRandomNumber(1, 6);
 
     return stDie + ndDie;
+  }
+
+  //Getters and setters
+  public getGameStatus(): GameStatus {
+    return this.gameStatus;
   }
 }

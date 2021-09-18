@@ -19,9 +19,6 @@ app.get("/", (req: Request, res: Response): void => {
 const server: any = app.listen(Settings.PORT, (): void => {
   console.log(`Server listening on the port ${Settings.PORT}`.green);
 });
-////////////////////////////////
-
-//Main logic
 
 const io: Server = new Server(server, {
   cors: {
