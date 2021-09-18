@@ -4,8 +4,9 @@ import { Request, Response, Application } from "express";
 import { Socket, Server } from "socket.io";
 import "colors";
 
-import Player from "./Player";
+import Player from "./game/Player";
 import Settings from "./Settings";
+import GameRoom from "./game/GameRoom";
 
 //////////Setting app////////////
 const app: Application = express();
@@ -21,7 +22,6 @@ const server: any = app.listen(Settings.PORT, (): void => {
 ////////////////////////////////
 
 //Main logic
-const Players: Array<Player> = new Array();
 
 const io: Server = new Server(server, {
   cors: {
@@ -30,27 +30,4 @@ const io: Server = new Server(server, {
   }
 });
 
-io.on("connection", (socket: Socket): void => {
-  console.log(`Client connected`.blue);
-
-  socket.on("test-emit", (message): void => {
-    console.log(`Test message: ${message}`.blue);
-  });
-
-  socket.on("add-player", (nick: string): void => {
-    if (Settings.checkIfPlayerExists(nick, Players)) {
-      io.emit("player-exists", "This nickname is already in use");
-      console.error(`USER ALREADY EXISTS`.red);
-    } else {
-      Players.push(new Player(nick));
-
-      const response: any = {
-        message: "Player has been added",
-        players: Players
-      };
-
-      io.emit("player-added", JSON.stringify(response, null, 4));
-      console.log(Players);
-    }
-  });
-});
+const gameRoom = new GameRoom(io);

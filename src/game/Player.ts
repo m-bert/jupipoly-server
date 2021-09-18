@@ -1,7 +1,7 @@
-import Settings from "./Settings";
+import Settings from "../Settings";
 
 export default class Player {
-  private nick: string;
+  private readonly nick: string;
   private money: number;
 
   constructor(nick: string) {

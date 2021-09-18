@@ -1,4 +1,4 @@
-import Player from "./Player";
+import Player from "./game/Player";
 
 export default class Settings {
   public static readonly PORT: number = 3300;
@@ -7,22 +7,5 @@ export default class Settings {
 
   public static getRandomNumber(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-
-  public static checkIfPlayerExists(
-    nick: string,
-    players: Array<Player>
-  ): boolean {
-    for (let player of players) {
-      if (nick == player.getNick()) {
-        return true;
-      }
-    }
-
-    return false;
-  }
-
-  public static checkIfPlayersAreReady(players: Array<Player>): boolean {
-    return true;
   }
 }
