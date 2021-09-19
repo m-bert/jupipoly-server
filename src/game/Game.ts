@@ -9,7 +9,9 @@ export default class Game {
     this.gameStatus = GameStatus.LOBBY;
   }
 
-  public init(): void {}
+  public init(): void {
+    this.gameStatus = GameStatus.RUNNING;
+  }
 
   private rollDice(): number {
     let stDie: number = Settings.getRandomNumber(1, 6);

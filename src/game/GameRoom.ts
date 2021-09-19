@@ -3,6 +3,7 @@ import Player from "./Player";
 import Settings from "../Settings";
 import Game from "./Game";
 import { GameStatus } from "./enums/GameStatus";
+import RequestHandler from "./../RequestHandler";
 
 export default class GameRoom {
   private readonly io: Server;
@@ -16,51 +17,33 @@ export default class GameRoom {
 
     this.game = new Game();
 
-    this.io = io;
-    this.handleRequests();
+    RequestHandler.setAttribs(this, io);
+    RequestHandler.listen();
   }
 
-  private handleRequests(): void {
-    this.io.on("connection", (socket: Socket): void => {
-      console.log(`Client connected. Connection id: ${socket.id}`.blue);
+  public addPlayer(nick: string, connectionID: string): void {
+    this.connectionsIDs.push(connectionID);
+    this.players.push(new Player(nick));
 
-      //Client requests
-      socket.on("add-player", (nick: string): void => {
-        if (this.checkIfPlayerExists(nick)) {
-          this.io.emit("add-player-status", false);
-        } else {
-          this.connectionsIDs.push(socket.id);
-          this.players.push(new Player(nick));
-
-          this.io.emit("add-player-status", true);
-
-          console.log(this.connectionsIDs);
-          console.log(this.players);
-        }
-      });
-
-      //
-      socket.on("disconnect", () => {
-        console.log(`Client disconnected: ${socket.id}`.red);
-
-        if (this.game.getGameStatus() === GameStatus.LOBBY) {
-          const index = this.connectionsIDs.indexOf(socket.id);
-
-          if (index > -1) {
-            this.connectionsIDs.splice(index, 1);
-            this.players.splice(index, 1);
-          }
-        }
-
-        console.log(this.connectionsIDs);
-        console.log(this.players);
-      });
-    });
+    this.logPlayers();
   }
 
-  private checkIfPlayerExists(nick: string): boolean {
+  public removePlayer(connectionID: string): void {
+    if (this.game.getGameStatus() === GameStatus.LOBBY) {
+      const index = this.connectionsIDs.indexOf(connectionID);
+
+      if (index > -1) {
+        this.connectionsIDs.splice(index, 1);
+        this.players.splice(index, 1);
+      }
+    }
+
+    this.logPlayers();
+  }
+
+  public checkIfPlayerExists(nick: string): boolean {
     for (let player of this.players) {
-      if (nick == player.getNick()) {
+      if (nick === player.getNick()) {
         return true;
       }
     }
@@ -76,5 +59,16 @@ export default class GameRoom {
     let activePlayerIndex: number = this.connectionsIDs.indexOf(connectionID);
 
     return this.players[activePlayerIndex];
+  }
+
+  private logPlayers(): void {
+    this.players.forEach((player, index) => {
+      let obj = {
+        nick: player.getNick(),
+        connID: this.connectionsIDs[index]
+      };
+
+      console.log(obj);
+    });
   }
 }
