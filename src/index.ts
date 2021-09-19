@@ -1,10 +1,9 @@
 import express = require("express");
 import cors = require("cors");
 import { Request, Response, Application } from "express";
-import { Socket, Server } from "socket.io";
+import { Server } from "socket.io";
 import "colors";
 
-import Player from "./game/Player";
 import Settings from "./Settings";
 import GameRoom from "./game/GameRoom";
 
@@ -27,4 +26,4 @@ const io: Server = new Server(server, {
   }
 });
 
-const gameRoom = new GameRoom(io);
+const gameRoom: GameRoom = new GameRoom(io);

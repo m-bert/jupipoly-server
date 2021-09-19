@@ -1,6 +1,5 @@
 import Settings from "../Settings";
-import { FieldType } from "./enums/FieldTypes";
-import { GameStatus } from "./enums/GameStatus";
+import { GameStatus } from "./Enums";
 
 export default class Game {
   private gameStatus: GameStatus;
