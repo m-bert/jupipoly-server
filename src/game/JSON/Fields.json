@@ -1,0 +1,256 @@
+{
+  "fields": [
+    {
+      "name": "Start",
+      "type": 5,
+      "currentPlayers": []
+    },
+    {
+      "name": "Klatka schodowa w internacie",
+      "type": 0,
+      "color": 0,
+      "cost": 60,
+      "currentPlayers": []
+    },
+    {
+      "name": "Szansa",
+      "type": 3,
+      "currentPlayers": []
+    },
+    {
+      "name": "06sz",
+      "type": 0,
+      "color": 0,
+      "cost": 60,
+      "currentPlayers": []
+    },
+    {
+      "name": "Przebierz buciki orzeszku",
+      "type": 4,
+      "amount": 200,
+      "currentPlayers": []
+    },
+    {
+      "name": "Ciapciong do Łapczycy I",
+      "type": 1,
+      "cost": 200,
+      "currentPlayers": []
+    },
+    {
+      "name": "Korytarz A",
+      "type": 0,
+      "color": 1,
+      "cost": 100,
+      "currentPlayers": []
+    },
+    {
+      "name": "Szansa",
+      "type": 3,
+      "currentPlayers": []
+    },
+    {
+      "name": "Korytarz B",
+      "type": 0,
+      "color": 1,
+      "cost": 100,
+      "currentPlayers": []
+    },
+    {
+      "name": "Korytarz C",
+      "type": 0,
+      "color": 1,
+      "cost": 120,
+      "currentPlayers": []
+    },
+    {
+      "name": "Grabienie Liści / obijanie się",
+      "type": 7,
+      "currentPlayers": []
+    },
+    {
+      "name": "UTK Pudełko cz.2",
+      "type": 0,
+      "color": 2,
+      "cost": 140,
+      "currentPlayers": []
+    },
+    {
+      "name": "Gabinet Łysego",
+      "type": 2,
+      "cost": 150,
+      "currentPlayers": []
+    },
+    {
+      "name": "UTK Pudełko cz.1",
+      "type": 0,
+      "color": 2,
+      "cost": 140,
+      "currentPlayers": []
+    },
+    {
+      "name": "512i",
+      "type": 0,
+      "color": 2,
+      "cost": 160,
+      "currentPlayers": []
+    },
+    {
+      "name": "Ciapciong do Łapczycy II",
+      "type": 1,
+      "cost": 200,
+      "currentPlayers": []
+    },
+    {
+      "name": "Koszykówka",
+      "type": 0,
+      "color": 3,
+      "cost": 180,
+      "currentPlayers": []
+    },
+    {
+      "name": "Trawiaste",
+      "type": 0,
+      "color": 3,
+      "cost": 180,
+      "currentPlayers": []
+    },
+    {
+      "name": "Szansa",
+      "type": 3,
+      "currentPlayers": []
+    },
+    {
+      "name": "Piłka Nożna",
+      "type": 0,
+      "color": 3,
+      "cost": 200,
+      "currentPlayers": []
+    },
+    {
+      "name": "Ryby z Piszkowskim",
+      "type": 6,
+      "currentPlayers": []
+    },
+    {
+      "name": "INFI",
+      "type": 0,
+      "color": 4,
+      "cost": 220,
+      "currentPlayers": []
+    },
+    {
+      "name": "Szansa",
+      "type": 3,
+      "currentPlayers": []
+    },
+    {
+      "name": "16i",
+      "type": 0,
+      "color": 4,
+      "cost": 220,
+      "currentPlayers": []
+    },
+    {
+      "name": "15i",
+      "type": 0,
+      "color": 4,
+      "cost": 240,
+      "currentPlayers": []
+    },
+    {
+      "name": "Ciapciong do Łapczycy III",
+      "type": 1,
+      "cost": 200,
+      "currentPlayers": []
+    },
+    {
+      "name": "UTK Płachta",
+      "type": 0,
+      "color": 5,
+      "cost": 260,
+      "currentPlayers": []
+    },
+    {
+      "name": "Mniej gadania więcej pracy",
+      "type": 0,
+      "color": 5,
+      "cost": 260,
+      "currentPlayers": []
+    },
+    {
+      "name": "Gabinet Piszkowskiego",
+      "type": 2,
+      "cost": 150,
+      "currentPlayers": []
+    },
+    {
+      "name": "Mapuj dysk sieciowy",
+      "type": 0,
+      "color": 5,
+      "cost": 280,
+      "currentPlayers": []
+    },
+    {
+      "name": "Do liści orzeszku",
+      "type": 8,
+      "currentPlayers": []
+    },
+    {
+      "name": "Haloooooooo, czy Kubaaaaa?",
+      "type": 0,
+      "color": 6,
+      "cost": 300,
+      "currentPlayers": []
+    },
+    {
+      "name": "109",
+      "type": 0,
+      "color": 6,
+      "cost": 300,
+      "currentPlayers": []
+    },
+    {
+      "name": "Szansa",
+      "type": 3,
+      "currentPlayers": []
+    },
+    {
+      "name": "209",
+      "type": 0,
+      "color": 6,
+      "cost": 320,
+      "currentPlayers": []
+    },
+    {
+      "name": "Ciapciong do Łapczycy IV",
+      "type": 1,
+      "cost": 200,
+      "currentPlayers": []
+    },
+    {
+      "name": "Szansa",
+      "type": 3,
+      "currentPlayers": []
+    },
+    {
+      "name": "511i",
+      "type": 0,
+      "color": 7,
+      "cost": 250,
+      "currentPlayers": []
+    },
+    {
+      "name": "Ja się tylko raz spóźniełem do pracy w 1974r.",
+      "type": 4,
+      "amount": 100,
+      "currentPlayers": []
+    },
+    {
+      "name": "510i",
+      "type": 0,
+      "color": 7,
+      "cost": 400,
+      "currentPlayers": []
+    }
+  ]
+}

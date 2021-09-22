@@ -1,9 +1,10 @@
 import { Server } from "socket.io";
 import Player from "./Player";
-import Settings from "../Settings";
 import Game from "./Game";
-import { GameStatus } from "./Enums";
+import { GameStatus } from "./Utils/Enums";
 import RequestHandler from "./../RequestHandler";
+
+import Fields from "./JSON/Fields.json";
 
 export default class GameRoom {
   private readonly connectionsIDs: Array<string>;

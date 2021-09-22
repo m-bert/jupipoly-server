@@ -1,10 +1,15 @@
 import Settings from "../Settings";
-import { PlayerStatus } from "./Enums";
+import { PlayerStatus } from "./Utils/Enums";
+import { Field, OwnedPropertiesAmount } from "./Utils/Interfaces";
 
 export default class Player {
   private readonly nick: string;
   private status: PlayerStatus;
+
+  private currentField: number;
   private money: number;
+  private properties: Array<Field>;
+  private ownedAmount: OwnedPropertiesAmount;
 
   constructor(nick: string) {
     this.nick = nick;
@@ -13,6 +18,8 @@ export default class Player {
 
   public init() {
     this.money = Settings.INITIAL_MONEY;
+    this.currentField = Settings.START_FIELD;
+    this.ownedAmount = Settings.INITIAL_OWNED_PROPERTIES_AMOUNT;
   }
 
   //Getters and setters

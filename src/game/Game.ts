@@ -1,14 +1,30 @@
 import Settings from "../Settings";
-import { GameStatus } from "./Enums";
+import { GameStatus } from "./Utils/Enums";
+import { Field } from "./Utils/Interfaces";
+import Player from "./Player";
+
+import Fields from "./JSON/Fields.json";
+import RequiredAmounts from "./JSON/RequiredAmount.json";
 
 export default class Game {
   private gameStatus: GameStatus;
 
+  private board: Array<Field>;
+  private players: Array<Player>;
+
   constructor() {
     this.gameStatus = GameStatus.LOBBY;
+    this.board = new Array();
   }
 
-  public init(): void {
+  public init(players: Array<Player>): void {
+    this.players = players;
+    this.board = Fields.fields;
+    this.players.forEach((player: Player) => {
+      this.board[0].currentPlayers.push(player);
+    });
+
+    //
     this.gameStatus = GameStatus.RUNNING;
   }
 
